@@ -152,10 +152,13 @@
         var timerInterval = null;
     
         function oncaptureFinish(result) {
+            alert("hi");
             document.getElementById('status').innerHTML = "";
             result.forEach(function (item) {
+                console.log(item);
                 if (item.type == "video") {
                     var videoblob = item.blob;
+                    console.log(videoblob);
                     var videobase64 = window.URL.createObjectURL(videoblob);
                     document.getElementById('recordedvideo').src = videobase64;
                     document.getElementById('downloadurl').style.display = '';
